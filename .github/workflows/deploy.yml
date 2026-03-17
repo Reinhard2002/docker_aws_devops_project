@@ -19,7 +19,7 @@ jobs:
           script: |
             cd ~/docker_project
             git pull origin main
-            docker stop $(docker ps -q) || true
-            docker rm $(docker ps -aq) || true
-            docker build -t docker_project .
-            docker run -d -p 80:80 docker_project
+            sudo docker stop $(docker ps -q) || true
+            sudo docker rm $(docker ps -aq) || true
+            sudo docker build -t docker_project .
+            sudo docker run -d -p 80:80 docker_project
